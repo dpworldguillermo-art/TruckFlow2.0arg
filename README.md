@@ -22,3 +22,4 @@ Después del primer despliegue:
 
 ## Seguridad
 Mantener el repositorio GitHub como **Private**. Antes de conectar datos operativos reales, se recomienda proteger la web con Cloudflare Access si no debe ser pública.
+Deploy ARGENTINA actualización 22-09-2026
