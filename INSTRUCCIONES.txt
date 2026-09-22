@@ -1,0 +1,12 @@
+ACTUALIZACIÓN GAMBETTA 2 - SOLO STATUS OK
+
+1. Reemplazar en GitHub el archivo: public/app.js
+   por el app.js incluido en este ZIP.
+2. Hacer Commit changes.
+3. Cloudflare volverá a desplegar automáticamente.
+
+IMPORTANTE:
+- NO se filtran los datos al sincronizar.
+- Cloudflare KV conserva OK, COMPLETE y cualquier otro Status del Excel.
+- La página Gambetta 2 solo muestra registros cuyo Status del Excel sea OK.
+- La futura segunda página podrá usar OK + COMPLETE sin volver a cambiar el sincronizador.

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gambetta 2 · Turno anterior</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="live-page">
+  <main class="live-shell">
+    <header class="live-header">
+      <a class="live-back" href="./live.html" aria-label="Volver al turno actual">‹</a>
+      <div class="live-heading">
+        <div class="live-title">LIVE VIEW - GAMBETTA 2</div>
+        <div id="shiftLabel" class="live-shift">Turno anterior</div>
+      </div>
+      <div class="live-menu" aria-hidden="true">⋮</div>
+    </header>
+
+    <section class="live-meta">
+      <div class="live-meta-info">
+        <span id="liveUpdated">Actualizando…</span>
+      </div>
+      <a class="shift-view-link" href="./live.html">Ver turno actual</a>
+    </section>
+
+    <section class="live-kpi-grid" aria-label="Indicadores del turno anterior">
+      <article class="live-kpi-card">
+        <small>ATENDIDAS<br>TOTALES</small>
+        <strong id="totalServed">0</strong>
+        <span>Turno anterior</span>
+      </article>
+      <article class="live-kpi-card">
+        <small>COMPLETADAS</small>
+        <strong id="activeNow">0</strong>
+        <span class="live-kpi-subtitle-empty" aria-hidden="true"></span>
+      </article>
+      <article class="live-kpi-card">
+        <small>EFICIENCIA TOTAL<br><b>T. PROM</b></small>
+        <strong id="avgTotal">--:--</strong>
+        <span>Turno anterior</span>
+      </article>
+      <article class="live-kpi-card">
+        <small>EFICIENCIA COMPLETADAS<br><b>T. PROM</b></small>
+        <strong id="avgActive">--:--</strong>
+        <span class="live-kpi-subtitle-empty" aria-hidden="true"></span>
+      </article>
+    </section>
+
+    <section class="live-section-title">
+      <strong>GAMBETTA 2 - DETALLE GRÁFICO</strong>
+      <span>Turno anterior</span>
+    </section>
+
+    <section class="live-detail-card">
+      <div class="live-detail-head">
+        <span>TYPE</span>
+        <span>COMPLETADAS</span>
+        <span>T. PROM</span>
+      </div>
+      <div id="typeDetailRows" class="live-detail-rows"></div>
+    </section>
+
+    <section class="live-distribution-card">
+      <div id="distributionDonut" class="distribution-donut" aria-label="Distribución de operaciones completadas"></div>
+      <div class="distribution-info">
+        <h2>DISTRIBUCIÓN OPERATIVA DE PATIO</h2>
+        <div id="distributionLegend" class="distribution-legend"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./logic.js"></script>
+  <script src="./live_previous.js"></script>
+  <script src="./auth-ui.js"></script>
+</body>
+</html>

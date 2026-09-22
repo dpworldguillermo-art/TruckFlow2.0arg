@@ -1,0 +1,25 @@
+TRUCKFLOW 2.0 - PASOS INICIALES
+
+1) GITHUB
+- Crear repositorio: TruckFlow2.0
+- Elegir: Private
+- NO marcar README, .gitignore ni License (ya vienen incluidos)
+- Subir todo el contenido de esta carpeta al repositorio.
+
+2) CLOUDFLARE
+- Workers & Pages > Create application
+- Import a repository
+- Conectar GitHub
+- Elegir TruckFlow2.0
+- Production branch: main
+- Deploy command: npm run deploy
+- Guardar y desplegar
+
+3) PRIMERA PRUEBA
+- Cloudflare entregará una URL *.workers.dev
+- Abrirla y comprobar la página Gambetta 2.
+
+4) DESPUÉS
+- Crear KV DATA
+- Crear secreto SYNC_TOKEN
+- Conectar C:\Proyectos\TruckFlow2.0\entradas

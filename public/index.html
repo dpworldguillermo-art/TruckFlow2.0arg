@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gambetta 2 · Tránsito en vivo</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">TRÁNSITO EN VIVO</div>
+        <h1>Gambetta 2</h1>
+      </div>
+      <div class="live-pill"><span class="live-dot"></span>EN VIVO</div>
+    </header>
+
+    <section class="toolbar">
+      <div class="source-line">
+        <span id="lastUpdate">Actualizando…</span>
+      </div>
+      <div class="toolbar-actions">
+        <a class="btn secondary link-btn" href="./live.html">Vista gráfica</a>
+        <button id="filtersToggle" class="btn secondary" type="button">Filtros</button>
+      </div>
+    </section>
+
+    <section id="filtersPanel" class="filters-panel" hidden>
+      <div class="filter-row">
+        <span class="filter-label">TIPO DE MANIOBRA</span>
+        <div id="typeFilters" class="chips"></div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">SERVICIO INTEGRAL SLI</span>
+        <div id="sliFilters" class="chips">
+          <button class="chip active" data-sli="all">Todos</button>
+          <button class="chip" data-sli="with">Con SLI</button>
+          <button class="chip" data-sli="without">Sin SLI</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="table-card">
+      <div class="table-actions">
+        <button id="outOfRangeToggle" class="btn danger-soft" type="button">⚠ Solo fuera de rango</button>
+        <strong id="showingCount">Mostrando: 0 / 0</strong>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th data-sort="type">TYPE <span></span></th>
+              <th data-sort="truck">TRUCK <span></span></th>
+              <th data-sort="status">STATUS <span></span></th>
+              <th data-sort="time">TIME <span></span></th>
+              <th data-sort="position">POSITION <span></span></th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="kpis">
+      <article class="kpi-card gate-in-card">
+        <div class="kpi-title">GATE IN <span>(OBJETIVO 35M)</span></div>
+        <div class="kpi-body">
+          <div class="metric"><small>PROM</small><strong id="gateInAvg">--:--</strong></div>
+          <div class="metric"><small>TRUCK</small><strong id="gateInTrucks">0</strong></div>
+          <div class="mini-gauge" id="gateInGauge" aria-label="Indicador Gate In">
+            <div class="arc"></div><div class="needle"></div><div class="hub"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="kpi-card gate-out-card">
+        <div class="kpi-title">GATE OUT <span>(OBJETIVO 45M)</span></div>
+        <div class="kpi-body">
+          <div class="metric"><small>PROM</small><strong id="gateOutAvg">--:--</strong></div>
+          <div class="metric"><small>TRUCK</small><strong id="gateOutTrucks">0</strong></div>
+          <div class="mini-gauge" id="gateOutGauge" aria-label="Indicador Gate Out">
+            <div class="arc"></div><div class="needle"></div><div class="hub"></div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <dialog id="truckDialog" class="truck-dialog">
+    <button class="dialog-close" id="dialogX" aria-label="Cerrar">×</button>
+    <h2>ⓘ FICHA DE CONTENEDOR</h2>
+    <div class="detail-box"><small>PLACA DE CAMIÓN</small><strong id="dTruck"></strong></div>
+    <div class="detail-box"><small>NÚMERO DE CONTENEDOR</small><strong id="dContainer"></strong></div>
+    <div class="detail-box"><small>SLOT DE POSICIONAMIENTO</small><strong id="dSlot"></strong></div>
+    <button class="btn primary full" id="dialogClose">Cerrar consulta</button>
+  </dialog>
+
+  <script src="./logic.js"></script>
+  <script src="./app.js"></script>
+  <script src="./auth-ui.js"></script>
+</body>
+</html>

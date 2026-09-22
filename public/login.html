@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TruckFlow · Iniciar sesión</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="login-page">
+  <main class="login-shell">
+    <section class="login-brand">
+      <div class="login-brand-mark">TF</div>
+      <div>
+        <div class="login-eyebrow">TRÁNSITO EN VIVO</div>
+        <h1>TruckFlow · Gambetta 2</h1>
+        <p>Control operativo de tránsito y atención de unidades.</p>
+      </div>
+    </section>
+
+    <section class="login-card">
+      <h2>Iniciar sesión</h2>
+      <p class="login-help">Ingresa con tu usuario y contraseña. La sesión dura como máximo 2 horas.</p>
+      <form id="loginForm" autocomplete="on">
+        <label class="login-field">
+          <span>Usuario</span>
+          <input id="username" name="username" autocomplete="username" required autofocus />
+        </label>
+        <label class="login-field">
+          <span>Contraseña</span>
+          <input id="password" name="password" type="password" autocomplete="current-password" required />
+        </label>
+        <button class="btn primary login-submit" type="submit">Ingresar</button>
+        <div id="loginMessage" class="login-message" role="alert"></div>
+      </form>
+    </section>
+  </main>
+  <script src="./login.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+node_modules/
+.wrangler/
+.dev.vars
+sync/config.json
+entradas/
+*.xlsx
+*.xls
+~$*
+.DS_Store
+Thumbs.db

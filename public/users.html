@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TruckFlow · Usuarios</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="users-page">
+  <main class="users-shell">
+    <header class="users-header">
+      <div>
+        <div class="eyebrow">ADMINISTRACIÓN</div>
+        <h1>Usuarios · TruckFlow</h1>
+      </div>
+      <a href="/" class="btn secondary link-btn">Volver al tablero</a>
+    </header>
+
+    <section class="users-grid">
+      <article class="users-card">
+        <h2>Crear usuario</h2>
+        <p>La contraseña se guarda cifrada mediante un hash; no se almacena en texto plano.</p>
+        <form id="createUserForm">
+          <label class="login-field"><span>Usuario</span><input id="newUsername" required minlength="3" maxlength="40" /></label>
+          <label class="login-field"><span>Contraseña</span><input id="newPassword" type="password" required minlength="8" /></label>
+          <label class="login-field"><span>Rol</span><select id="newRole"><option value="user">Usuario</option><option value="admin">Administrador</option></select></label>
+          <button class="btn primary" type="submit">Crear usuario</button>
+          <div id="userMessage" class="login-message"></div>
+        </form>
+      </article>
+
+      <article class="users-card users-list-card">
+        <div class="users-list-head"><h2>Usuarios creados</h2><button id="refreshUsers" class="btn secondary" type="button">Actualizar</button></div>
+        <div class="users-table-wrap">
+          <table class="users-table">
+            <thead><tr><th>Usuario</th><th>Rol</th><th>Creado</th><th>Acciones</th></tr></thead>
+            <tbody id="usersBody"></tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <dialog id="passwordDialog" class="truck-dialog">
+    <button class="dialog-close" id="passwordDialogX" aria-label="Cerrar">×</button>
+    <h2>Cambiar contraseña</h2>
+    <p id="passwordUserLabel"></p>
+    <label class="login-field"><span>Nueva contraseña</span><input id="resetPassword" type="password" minlength="8" /></label>
+    <button class="btn primary full" id="savePassword">Guardar contraseña</button>
+  </dialog>
+
+  <script src="./users.js"></script>
+  <script src="./auth-ui.js"></script>
+</body>
+</html>
