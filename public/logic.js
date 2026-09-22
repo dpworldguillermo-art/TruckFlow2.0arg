@@ -1,4 +1,4 @@
-const GATE_IN = new Set(['Dray In','Receive Empty','Receive Export']);
+cconst GATE_IN = new Set(['Dray In','Receive Empty','Receive Export']);
 const GATE_OUT = new Set(['Deliver Empty','Dray Off','Deliver Import']);
 
 function gateOf(type){
@@ -71,9 +71,15 @@ function hasArrumaje(row){
 
 function containerNumber(row){
   const primary = row?.['Ctr Number'];
-  if(primary !== null && primary !== undefined && String(primary).trim() !== '') return String(primary).trim();
-  const fallback = row?.['Ctr Nbr Request'];
-  if(fallback !== null && fallback !== undefined && String(fallback).trim() !== '') return String(fallback).trim();
+  if(primary !== null && primary !== undefined && String(primary).trim() !== ''){
+    return String(primary).trim();
+  }
+
+  const requested = row?.['Ctr Nbr Requested'];
+  if(requested !== null && requested !== undefined && String(requested).trim() !== ''){
+    return String(requested).trim();
+  }
+
   return '—';
 }
 
