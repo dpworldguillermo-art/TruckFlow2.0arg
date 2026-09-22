@@ -30,7 +30,7 @@ function buildTypeFilters(){
 
 function getView(){
   const now=new Date();
-  // ARG: conservar todos los registros recibidos, pero mostrar solo Status = OK.
+  // ARGENTINA: conservar todos los registros recibidos, pero mostrar solo Status = OK.
   // Así COMPLETE y otros estados siguen almacenados para futuras páginas/módulos.
   let rows=state.rows.filter(isStatusOK).map(r=>({...r,__min:elapsedMinutes(r,now),__gate:gateOf(r['Transaction Type']),__pos:displayPosition(r['Unit Position']),__status:statusClass(r['Transaction Type'],elapsedMinutes(r,now))}));
   if(state.type!=='all') rows=rows.filter(r=>r['Transaction Type']===state.type);
@@ -51,7 +51,7 @@ function render(){
     const cls=r.__gate==='GATE IN'?'gate-in':'gate-out';
     const maneuver=r['Transaction Type']||'';
     tr.innerHTML=`<td><span class="type-badge ${cls}"><strong>${r.__gate}</strong><small>${escapeHtml(maneuver)}</small></span></td>
-      <td><button class="truck-link">${escapeHtml(r['Truck Visit Truck License']||'—')}</button>${hasSLI(r)?'<span class="sli-tag">SLI</span>':''}</td>
+      <td><div class="truck-cell"><button class="truck-link">${escapeHtml(r['Truck Visit Truck License']||'—')}</button><div class="truck-tags">${hasSLI(r)?'<span class="sli-tag">SLI</span>':''}${hasArrumaje(r)?'<span class="arr-tag">ARR</span>':''}</div></div></td>
       <td><span class="status-dot ${r.__status}" title="${r.__status.replace('status-','')}"></span></td>
       <td><strong>${r.__min==null?'—':r.__min+' min'}</strong></td>
       <td><span class="position-pill ${r.__pos==='RUMA'?'ruma':''}">${r.__pos}</span></td>`;
@@ -80,7 +80,8 @@ function setGauge(el,value,target){
 
 function openTruck(r){
   $('#dTruck').textContent=r['Truck Visit Truck License']||'—';
-  $('#dContainer').textContent=r['Ctr Number']||'—';
+  $('#dContainer').textContent=containerNumber(r);
+  $('#dTruckingCompany').textContent=truckingCompanyName(r);
   $('#dSlot').textContent=slotPosition(r);
   $('#truckDialog').showModal();
 }
