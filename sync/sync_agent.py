@@ -40,7 +40,7 @@ def publish(payload,cfg):
 def main():
     cfg=read_config(sys.argv[1] if len(sys.argv)>1 else 'config.json')
     last=None; interval=int(cfg.get('interval_seconds',10))
-    print('Gambetta Sync iniciado. Carpeta:',cfg['folder'])
+    print('ARG Sync iniciado. Carpeta:',cfg['folder'])
     while True:
         try:
             f=newest_excel(cfg['folder'])
@@ -54,3 +54,4 @@ def main():
         time.sleep(interval)
 
 if __name__=='__main__': main()
+
