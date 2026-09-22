@@ -1,12 +1,13 @@
-# TruckFlow 2.0 · Gambetta 2
+[README.md](https://github.com/user-attachments/files/32532539/README.md)
+# TruckFlow 2.0 · ARG
 
-Aplicación web para visualizar el tránsito de camiones y contenedores de Gambetta 2.
+Aplicación web para visualizar el tránsito de camiones y contenedores de ARG.
 
 ## Arquitectura
 - Cloudflare Worker: API + servidor web.
 - Workers Static Assets: frontend público.
 - Workers KV (se configura en el paso 2): último dataset publicado.
-- Agente local Python: vigila `C:\Proyectos\TruckFlow2.0\entradas` y publica el Excel más reciente.
+- Agente local Python: vigila `C:\Proyectos\TruckFlowARG\entradas` y publica el Excel más reciente.
 
 ## Primera publicación
 La primera versión puede desplegarse sin KV. Mostrará el dataset de demostración incluido en `public/data/latest.json`.
