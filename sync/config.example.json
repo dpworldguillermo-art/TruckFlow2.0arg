@@ -1,6 +1,6 @@
 {
-  "folder": "C:\\Proyectos\\TruckFlow2.0\\entradas",
-  "endpoint": "https://TU-WORKER.workers.dev/api/data",
+  "folder": "C:\\Proyectos\\TruckFlowARG\\entradas",
+  "endpoint": "https://truckflow-arg.dpworld.workers.dev/api/data",
   "token": "CAMBIAR_POR_UN_TOKEN_LARGO_Y_SEGURO",
   "interval_seconds": 10
 }
