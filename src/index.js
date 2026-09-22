@@ -13,7 +13,7 @@ export default {
         ok: true,
         storage: Boolean(env.DATA),
         authConfigured: Boolean(env.AUTH_SECRET && env.ADMIN_USER && env.ADMIN_PASSWORD),
-        app: 'TruckFlow 2.0 - Gambetta 2'
+        app: 'TruckFlow 2.0 - ARG'
       });
     }
 
