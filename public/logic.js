@@ -1,5 +1,5 @@
-const GATE_IN = new Set(['Dray In','Receive Empty']);
-const GATE_OUT = new Set(['Deliver Empty','Dray Off']);
+const GATE_IN = new Set(['Dray In','Receive Empty','Receive Export']);
+const GATE_OUT = new Set(['Deliver Empty','Dray Off','Deliver Import']);
 
 function gateOf(type){
   if(GATE_IN.has(type)) return 'GATE IN';
@@ -62,6 +62,33 @@ function slotPosition(row){
 function hasSLI(row){
   const v = row['Unit Código Integral'];
   return v !== null && v !== undefined && String(v).trim() !== '';
+}
+
+
+function hasArrumaje(row){
+  return String(row?.Stow || '').trim().toUpperCase() === 'ARRUMAJE';
+}
+
+function containerNumber(row){
+  const primary = row?.['Ctr Number'];
+  if(primary !== null && primary !== undefined && String(primary).trim() !== '') return String(primary).trim();
+  const fallback = row?.['Ctr Nbr Request'];
+  if(fallback !== null && fallback !== undefined && String(fallback).trim() !== '') return String(fallback).trim();
+  return '—';
+}
+
+function truckingCompanyName(row){
+  const candidates = [
+    row?.['Trucking Company Name'],
+    row?.['Trucking Company'],
+    row?.['Truck Company Name']
+  ];
+  for(const value of candidates){
+    if(value !== null && value !== undefined && String(value).trim() !== ''){
+      return String(value).trim();
+    }
+  }
+  return '—';
 }
 
 function averageMinutes(rows, gate, now = new Date()){
