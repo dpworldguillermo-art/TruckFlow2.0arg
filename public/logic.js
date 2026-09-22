@@ -1,4 +1,4 @@
-cconst GATE_IN = new Set(['Dray In','Receive Empty','Receive Export']);
+const GATE_IN = new Set(['Dray In','Receive Empty','Receive Export']);
 const GATE_OUT = new Set(['Deliver Empty','Dray Off','Deliver Import']);
 
 function gateOf(type){
