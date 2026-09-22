@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "truckflow2-0",
+  "name": "truckflow-arg",
   "main": "src/index.js",
   "compatibility_date": "2026-09-21",
   "assets": {
@@ -23,10 +23,11 @@
     ],
     "html_handling": "none"
   },
+  // IMPORTANTE: crea un KV propio llamado ARG_DATA y reemplaza el ID de ceros por su Namespace ID real.
   "kv_namespaces": [
     {
       "binding": "DATA",
-      "id": "475c9a0bc0914d9ab578bc0b0d3c56eb"
+      "id": "00000000000000000000000000000000"
     }
   ],
   "secrets": {
