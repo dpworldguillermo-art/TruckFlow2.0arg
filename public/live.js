@@ -1,4 +1,4 @@
-const LIVE_COLORS = ['#2f9b91','#2b98bc','#f2a11a','#d72f50','#7c3aed','#2563eb','#37b972','#d97706','#64748b','#0f766e'];
+const LIVE_COLORS = ['#0F52BA','#2563EB','#38BDF8','#1D4ED8','#4F46E5','#6366F1','#0284C7','#3B82F6','#4338CA','#60A5FA'];
 const liveState = { rows: [], sourceFile: '', generatedAt: '' };
 const q = s => document.querySelector(s);
 
