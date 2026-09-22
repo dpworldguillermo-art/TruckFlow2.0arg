@@ -30,7 +30,7 @@ function buildTypeFilters(){
 
 function getView(){
   const now=new Date();
-  // Gambetta 2: conservar todos los registros recibidos, pero mostrar solo Status = OK.
+  // ARG: conservar todos los registros recibidos, pero mostrar solo Status = OK.
   // Así COMPLETE y otros estados siguen almacenados para futuras páginas/módulos.
   let rows=state.rows.filter(isStatusOK).map(r=>({...r,__min:elapsedMinutes(r,now),__gate:gateOf(r['Transaction Type']),__pos:displayPosition(r['Unit Position']),__status:statusClass(r['Transaction Type'],elapsedMinutes(r,now))}));
   if(state.type!=='all') rows=rows.filter(r=>r['Transaction Type']===state.type);
